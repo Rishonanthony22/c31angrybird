@@ -1,3 +1,21 @@
+var name = "Rishon";
+console.log(name);
+
+var arr1 = [1,2,3,4,5];
+console.log(arr1);
+
+var arr2 = ["Rishon",4,true];
+console.log(arr2[0]);
+
+var arr3 = [[1,2],["rishon","student"]];
+console.log(arr3[1][1]);
+
+arr3.push("smart");
+console.log(arr3);
+
+arr3.pop();
+console.log(arr3);
+
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
