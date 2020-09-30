@@ -1,20 +1,4 @@
-var name = "Rishon";
-console.log(name);
-
-var arr1 = [1,2,3,4,5];
-console.log(arr1);
-
-var arr2 = ["Rishon",4,true];
-console.log(arr2[0]);
-
-var arr3 = [[1,2],["rishon","student"]];
-console.log(arr3[1][1]);
-
-arr3.push("smart");
-console.log(arr3);
-
-arr3.pop();
-console.log(arr3);
+var gameState="onSling";
 
 const Engine = Matter.Engine;
 const World= Matter.World;
@@ -87,16 +71,20 @@ function draw(){
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    if(gameState !=="launched"){
+        Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
+   
 }
 
 
 function mouseReleased(){
+    gameState="launched";
     slingshot.fly();
 }
 
-function keyPressed(){
-    if(keyCode === 32){
-        slingshot.attach(bird.body);
-    }
-}
+//function keyPressed(){
+   // if(keyCode === 32){
+    //    slingshot.attach(bird.body);
+ //   }
+//}
